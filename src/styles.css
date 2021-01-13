@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Font-family: Open Sans; */
+/* Font-weight: 300; */
+/* Body background: l inear-gradient(to right, #f857a6, #ff5858) */
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    background: linear-gradient(to right, #f857a6, #ff5858);
+}

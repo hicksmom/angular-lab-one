@@ -1,0 +1,24 @@
+<main>
+    <section>
+        <h1>{{title}}</h1>
+        <p>A place to store your to-dos</p>
+        <form>
+            <input type="text" name="filter-todo" [(ngModel)]="filter" placeholder="Filter your to-dos">
+        </form>
+        <ol>
+            <!-- The ngForOf directive must be used. -->
+            <li *ngFor="let todo of getFilteredResults(); index as i">
+                <span *ngIf="!todo.completed"><button id="comp_btn" (click)="completeTask(todo)">Complete</button></span>        
+                <span [ngClass]="{ completed: todo.completed }">{{todo.task}}</span>
+                <button id="x_btn" (click)="removeTask(todo)"><i class="fas fa-times"></i></button>
+                <!-- <div *ngIf="!todos || todos.length === 0">
+                    <p>Nothing to do!</p>
+                </div>             -->
+            </li>
+        </ol>  
+        <form>
+            <input type="text" name = "add" [(ngModel)]="add" placeholder="Add your to-do">
+            <button id="add_btn" (click)="addTask(add)">Add</button>
+        </form>
+        </section>
+</main>
