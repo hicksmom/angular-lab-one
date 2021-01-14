@@ -46,22 +46,22 @@ export class TodoComponent implements OnInit {
     });
   }
 
-  removeTask(todo: Todo) {
+  removeTask(todo: Todo) : void {
     let remove = this.displayedTodos.indexOf(todo);
     this.displayedTodos.splice(remove, 1);
   }
 
-  completeTask(todo: Todo) {
+  completeTask(todo: Todo) : void {
     todo.completed = true; 
   }
 
-  add : string = "";
+  add: string = "";
 
-  addTask(newTask : string) {
+  addTask(newTask : string) : Todo[] {
     if (newTask != '') {
       let newTodo : Todo = {task: newTask, completed: false};
       this.displayedTodos.push(newTodo);
-      newTask = '';
+      this.add = '';
       return this.displayedTodos;
     }
   }
